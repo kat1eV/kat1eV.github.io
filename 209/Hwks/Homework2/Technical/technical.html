@@ -1,0 +1,90 @@
+<html>
+    <!--initially linked to css1-->
+    <link id="stylesheet" rel="stylesheet" href="./style1.css">
+
+<head>
+    <h1>CSC 356: Seminar in Platform Activism</h1>
+    <ul>
+        <li>Resources:</li>
+        <li><a href="./formerSAd.txt">Former Student Advice for 356 </a></li>
+        <li><a href="https://deadroxy.com/courses/csc356s25">Class Syllabus </a></li>
+        <li><a href="https://www.imdb.com/title/tt5688932/">Sorry to Bother You (Movie) </a></li>
+      </ul>
+
+      <!--Button to change CSS!-->
+      <button onclick="switchTheme();">Switch theme</button>
+
+      <script>
+        function switchTheme(){
+            var stylesheet = document.getElementById('stylesheet');
+
+            if(stylesheet.getAttribute('href')=='./style1.css') {
+                stylesheet.setAttribute('href', './style2.css');
+            } else {
+                stylesheet.setAttribute('href', 'style1.css');
+            }
+        }
+      </script>
+
+</head>
+
+<body>
+    <img src="../images/activism.avif" alt="Tech Activism Image" class="center">
+
+
+    <button onclick="toggle();">Read me</button>
+    <p>(double click for the first time!)</p>
+
+
+    <div>
+        <h2 id="mySentence" hidden>
+        This is my schedule for my seminar in Platorm Activism! These are the weeks we have covered so far. (Tutorials: 2.5hrs, Technical:3hrs, Creative:1hr)
+        </h2>
+        <br /><br />
+    </div>
+
+   <script> 
+        let toggle = () => {
+      
+          let element = document.getElementById("mySentence");
+          let hidden = element.getAttribute("hidden");
+      
+          if (hidden) {
+             element.removeAttribute("hidden");
+          } else {
+             element.setAttribute("hidden", "true");
+          }
+        }
+      </script>
+
+    <table>
+        <tr>
+            <th>Week</th>
+            <th>Lesson Plan</th>
+            <th>Texts to Read Prior</th>
+            <th>Discussants</th>
+        </tr>
+        <tr>
+            <th>Week1</th>
+            <th>Welcome and introductions</th>
+            <th>(to be read after class)<a href="http://ccr.sigcomm.org/online/files/p83-keshavA.pdf">Keshav- How to read a paper</a> & <a href="./seminarDG.txt">seminar discussion guide</a></th>
+            <th>none</th>
+        </tr>
+        <tr>
+            <th>Week 2</th>
+            <th>How platforms shape what society sees: The Algorithmic Lens</th>
+            <th><a href="https://www.twitterandteargas.org/downloads/twitter-and-tear-gas-by-zeynep-tufekci.pdf">Tufecki- Twitter and Tear Gas Chap.6 - Platforms and Algorithms</a> & <a href="https://dokumen.pub/custodians-of-the-internet-platforms-content-moderation-and-the-hidden-decisions-that-shape-social-media-9780300235029.html">Gillespie- Custodians of the Internet Chap.6 - Facebook, Breastfeeding, Suspension  </a> </th>
+            <th>Deepa & Priya</th>
+        </tr>
+        <tr>
+            <th>Week 3</th>
+            <th>How platforms hide the humans powering them: The Legions of Oz</th>
+            <th><a href="https://dokumen.pub/custodians-of-the-internet-platforms-content-moderation-and-the-hidden-decisions-that-shape-social-media-9780300235029.html">Gillespie- Custodians of the Internet Chap.5 - The Human Labor of Moderation</a> & <a href="http://sarkoups.free.fr/gray2019.pdf">Gray & Suri - Ghost Work Chap.1 - Humans in the Loop</a> </th>
+            <th>Hillary & Yijing</th>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color:floralwhite;
+    background-color:rgb(130, 27, 117);
+}
+
+head{
+    background-color:floralwhite;
+}
+
+body{
+    background-color:floralwhite;
+}
+img{
+    border: 3px solid purple;
+    border-radius: 50%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width:400px;
+  }
+
+
+  p{
+    color:black;
+    text-align: center;
+  }
+
+  h2{
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgb(130, 27, 117);
+    font-size: medium;
+  }
+
+  button{
+    margin: 0 auto;
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:black;
+
+  }
+
+ 
+    table, th, td {
+        border:2px solid rgb(130, 27, 117);
+        align-self: center;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color:rgb(130, 27, 117);
+        font-size: large;
+    }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    }
+
+    li {
+    float: left;
+    font-size: medium;
+    color:rgb(130, 27, 117);
+    }
+
+    li a {
+    display: block;
+    padding: 10px;
+    }
+
+    a:link {
+        color: rgb(130, 27, 117);
+        background-color: transparent;
+        text-decoration: none;
+      }
+      
+      a:visited {
+        color: rgb(195, 55, 176);
+        background-color: transparent;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        color:rgb(130, 27, 117);
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      
+      a:active {
+        color: rgb(104, 47, 96);
+        background-color: transparent;
+        text-decoration: underline;
+      }
+
+
