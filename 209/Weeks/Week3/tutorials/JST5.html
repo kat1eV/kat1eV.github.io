@@ -1,0 +1,103 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: Strings
+-->
+
+<html>
+    <h1>JavaScript Strings</h1>
+    <p>strings are written inside quotes (can use sinle or double)</p>
+    <script>
+        let text = "John Doe";  // String written inside quotes
+        document.getElementById("demo").innerHTML = text;
+        </script>
+    
+    <h2>Quotes inside quotes</h2>
+    <p>you can use quotes inside quotes as long as they dont match the ones the're inside of</p>
+    <script>
+        let answer1 = "It's alright";
+        let answer2 = "He is called 'Johnny'";
+        let answer3 = 'He is called "Johnny"'; 
+        
+        document.getElementById("demo").innerHTML =
+        answer1 + "<br>" + answer2 + "<br>" + answer3; 
+        </script>
+
+    <h2>Template Strings</h2>
+    <p>templates are strings enclosed inside of backticks ``. They allow single and double quotes inside</p>
+
+    <h2>String Length</h2>
+    <p>there is a built in property for length. i.e."text.length;"</p>
+
+    <h2>Escape Characters</h2>
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Result</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <th>\'</th>
+            <th>'</th>
+            <th>single quote</th>
+        </tr>
+        <tr>
+            <th>\"</th>
+            <th>"</th>
+            <th>double quote</th>
+        </tr>
+        <tr>
+            <th>\\</th>
+            <th>\</th>
+            <th>backslash</th>
+        </tr>
+        <tr>
+            <th>\b</th>
+            <th>backspace</th>
+        </tr>
+        <tr>
+            <th>\f</th>
+            <th>form feed</th>
+        </tr>
+        <tr>
+            <th>\n</th>
+            <th>newline</th>
+        </tr>
+        <tr>
+            <th>\r</th>
+            <th>carriage return</th>
+        </tr>
+        <tr>
+            <th>\t</th>
+            <th>horizontal tabulator</th>
+        </tr>
+        <tr>
+            <th>\v</th>
+            <th>vertical tabulator</th>
+        </tr>
+    </table>
+
+        <h2>Breaking up Strings</h2>
+        <p>safest way to break up a string is using addition</p>
+        <p id="demo"></p>
+
+        <script>
+        document.getElementById("demo").innerHTML = "Hello " +
+        "Dolly!";
+        </script>
+
+        <h2>Template string allows for multiline strings</h2>
+
+        <h2>= Operators</h2>
+        <p>Strings and objects cannot be safely compared</p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+
+        <script>
+            let x = "John";        // x is a string
+            let y = new String("John");  // y is an object
+            document.getElementById("demo2").innerHTML = (x==y); //== means equal
+            document.getElementById("demo3").innerHTML = (x===y);// === means NOT equal
+            </script>
+
+</html>

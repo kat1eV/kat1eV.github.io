@@ -1,0 +1,78 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: Output
+-->
+<html>
+<body>
+    <h2> JS Output</h2>
+
+    <ul>Can display "data" in different ways:
+    <li>Writing into an HTML element using 'innerHTML'</li>
+    <li>Writing into the HTML output using 'document.write()'</li>
+    <li>Writing into an alert box using 'window.alert()'</li>
+    <li>Writing into the browser console, using 'console.log' </li>
+    </ul>
+
+
+    <h2>Using innerHTML</h2>
+    <pre>To access an HTML element, JavaScript can use the document.getElementById(id) method.
+
+        The id attribute defines the HTML element. The innerHTML property defines the HTML content:</pre>
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = 5 + 6;
+    </script>
+
+    <h2>Using document.write()</h2>
+
+    <p> For <b>testing purposes</b> it's convenient to use document.write()</p>
+
+    <script>
+        document.write(5 + 6);
+        </script>
+
+    <p>Using document.write() after an HTML document is loaded, will delete all existing HTML:</p>
+
+    <button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+
+    <h2>Using window.alert()</h2>
+    <p>You can use an alert box to display data:</p>
+
+    <!-- <script>
+        window.alert(5 + 6);
+        </script> -->
+
+    <pre>You can skip the window keyword.
+
+        In JavaScript, the window object is the global scope object. This means that variables, properties, and methods by default belong to the window object. 
+        This also means that specifying the window keyword is optional:
+    </pre>
+
+    <!-- <script>
+        alert(5 + 6);
+        </script> -->
+        <p> Windows got anoying. I commented them out but they worked!</p>
+
+    
+    <h2>Using console.log()</h2>
+    <p>For <b>debugging purposes</b>, you can call the console.log() method in the browser to display data.</p>
+
+    <script>
+        console.log(5 + 6);
+        </script>
+
+    
+    <h2>JavaScript Print</h2>
+    <p> Js doesnt have a print object or print method except for <b>window.print()</b></p>
+    <button onclick="window.print()">Print this page</button>
+
+</body>
+
+
+
+
+
+</html>

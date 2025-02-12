@@ -1,0 +1,82 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: Arrays
+-->
+
+<html>
+    <h1>JavaScript Arrays</h1>
+
+    <h2>Why use arrays?</h2>
+    <p>An array is a special variable, which can hold more than one value</p>
+    <p>It is especially helpful when trying to loop through a series of ojects to find the one you want</p>
+
+    <h2>Array Syntax</h2>
+    <p>const array_name = [item1, item2, ...];</p>
+    <script>
+        const cars = ["Saab", "Volvo", "BMW"];
+        document.getElementById("demo").innerHTML = cars;
+        </script>
+    <p>can also use keyword new Array</p>
+
+    <h2>Accessing Array Elements</h2>
+    <p>you refer to index number</p>
+    <pre> i.e.
+        const cars = ["Saab", "Volvo", "BMW"];
+        let myCar = cars[0];
+    </pre>
+
+    <h2>Changing an Array Element</h2>
+    <pre>
+        cars[0] = "Opel";
+    </pre>
+
+    <h2>Converting an array to a string</h2>
+    <pre>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits.toString();
+
+        Result:
+        Banana,Orange,Apple,Mango
+    </pre>
+
+    <h2>Access Full Array</h2>
+    <p>access by array name</p>
+    <pre>
+        const cars = ["Saab", "Volvo", "BMW"];
+        document.getElementById("demo").innerHTML = cars;
+    </pre>
+
+    <h2>Arrays are Objects</h2>
+    <h3>but array elements can also be made objects:</h3>
+    <pre>
+        myArray[0] = Date.now;
+        myArray[1] = myFunction;
+        myArray[2] = myCars;
+    </pre>
+
+    <h2>Array Properties and Methods</h2>
+    <dl>
+       <dt><b>array.length</b></dt>
+       <dd>returns length of an array. can be used i.e.let fruit = fruits[fruits.length - 1]; to access last element</dd>
+       <dt><b>array.sort</b></dt>
+       <dd>sorts the array</dd>
+       <dt><b>looping array elements</b></dt>
+       <dd>w/ a for loop as shown</dd>
+       <pre>
+                const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let fLen = fruits.length;
+
+        let text = "<ul>";
+        for (let i = 0; i < fLen; i++) {
+        text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+       </pre>
+       <dt><b>array.push</b></dt>
+       <dd>add array elemnts into an array
+        WARNING: can create holes in your array
+       </dd>
+
+    </dl>
+</html>

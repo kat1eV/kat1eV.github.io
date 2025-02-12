@@ -1,0 +1,76 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: Objects (more!)
+-->
+
+<html>
+    <body>
+        <h1>JS objects have properties </h1>
+        <ul>I.E A car has:
+            <li>name</li>
+            <li>model</li>
+            <li>weight</li>
+            <li>color</li>
+        </ul>
+
+        <h1>But methods are what an object can do</h1>
+        <ul>I.E A car can:
+            <li>car.start()</li>
+            <li>car.drive()</li>
+            <li>car.break()</li>
+            <li>car.stop()</li>
+        </ul>
+
+        <h1>JS variables are containers for data values:</h1>
+        <h2>Creating a Variable</h2>
+        <p id="demo"></p>
+
+        <script>
+        // Create and a Variable:
+        let car = "Fiat";
+        document.getElementById("demo").innerHTML = "Car: " +  car;
+        </script>
+
+        <h1>JS Objects</h1>
+        <p>objects are variables too. But objects can contain many values.</p>
+
+        <!--assigns many values (Fiat, 500, white) to an object named vehcile:-->
+        <h2>Creating an Object</h2>
+
+        <p id="demo"></p>
+
+        <script>
+        // Create an Object:
+        const vehicle = {type:"Fiat", model:"500", color:"white"};
+
+        // Display Data from the Object:
+        document.getElementById("demo").innerHTML =
+        "The car type is " + car.type;
+        </script>
+
+        <script>
+            // Create an Object
+            const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+            // This creates an object and assigns it 4 properties
+        </script>
+
+        <!-- You can also use the key word: const person = new Object(), and then assign properties later-->
+
+        <h1> Accessing Object Properties</h1>
+        <h2>objectName.propertyName or</h2>
+        <h2>objectName["propertyName"]</h2>
+        <pre>i.e. 
+                person.lastName;
+                or
+                person.["lastName"];
+        </pre>
+
+
+    </body>
+
+
+
+
+
+</html>

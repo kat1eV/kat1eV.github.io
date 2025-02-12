@@ -1,0 +1,30 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: IF
+-->
+
+<html>
+    <h1>JavaScript If-Else</h1>
+    <h2>Conditional Statements</h2>
+    <ul>
+        <li>Use <b>if</b> to specify a block of code to be executed, if a specified condition is true</li>
+        <li>Use <b>else</b> to specify a block of code to be executed, if the same condition is false</li>
+        <li>Use <b>elseif</b> to specify a new condition to test, if the first condition is false</li>
+        <li>Use <b>else</b> to specify many alternative blocks of code to be executed</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p id="demo"></p>
+
+    <script>
+    let text;
+    if (Math.random() < 0.5) {
+    text = "<a href='https://w3schools.com'>Visit W3Schools</a>";
+    } else {
+    text = "<a href='https://wwf.org'>Visit WWF</a>";
+    }
+    document.getElementById("demo").innerHTML = text;
+    </script>
+
+</html>

@@ -1,0 +1,71 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: Events
+-->
+<style>
+    table, th, td {
+    border:2px solid black;
+    align-self: center;
+  }
+</style>
+<html>
+    <body>
+
+        <h1>JavaScript Events</h1>
+        <h2> an event can be somethig done by the user or browser</h2>
+        <ul>some examples of events:
+            <li>HTML webpage finishes loading</li>
+            <li>HTML input field was changed</li>
+            <li>HTML button was clicked</li>
+            <li>etc...</li>
+        </ul>
+
+        <h2>JS lets you execute code when events are detected</h2>
+        <pre>Single quotes version: "<element event='some JavaScript'>"</pre>
+        <pre>Double quotes version: "<element event="some JavaScript">"</pre>
+            <p>you cant see on the webpage but trust me! Its in the file!</p>
+
+        <h2>Button example</h2>
+        <h1>JavaScript HTML Events</h1>
+        <h2>The onclick Attribute</h2>
+
+        <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+        <p> can also do this by the code changing the contents of its own element instead of refering to it by its ID</p>
+        <button onclick="this.innerHTML = Date()">The time is?</button>
+        <p id="demo"></p>
+
+        <h2>Common JS events</h2>
+        <table>
+            <tr>
+                <th>Event</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <th>onchange</th>
+                <th>an HTML element has been changed</th>
+            </tr>
+            <tr>
+                <th>onclick</th>
+                <th>a user clicks an HTML element</th>
+            </tr>
+            <tr>
+                <th>onmouseover</th>
+                <th>user moves mouse over an HTML element</th>
+            </tr>
+            <tr>
+                <th>onmouseout</th>
+                <th>the user moves mouse away from HTML element</th>
+            </tr>
+            <tr>
+                <th>onkeydown</th>
+                <th>user pushes a keyboard key</th>
+            </tr>
+            <tr>
+                <th>onload</th>
+                <th>the browser has finsihsed loading the page</th>
+            </tr>
+        </table>
+    </body>
+</html>

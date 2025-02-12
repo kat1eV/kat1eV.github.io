@@ -4,6 +4,13 @@ h1{
     text-align: center;
     background-color: midnightblue;
 }
+h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:cornsilk;
+    text-align: center;
+    background-color: midnightblue;
+    font-size: medium;
+}
 
 table, th, td {
     border:2px solid rgb(56, 69, 156);
@@ -19,11 +26,6 @@ li{
     text-align: center;
 }
 
-h2{
-    font-size: medium;
-    color:rgb(0, 30, 255);
-    text-align: center;
-}
 
 button{
     text-align: center;
