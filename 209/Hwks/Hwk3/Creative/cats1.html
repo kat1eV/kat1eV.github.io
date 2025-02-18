@@ -1,0 +1,51 @@
+<html>
+    
+    <link rel="stylesheet" href="./cats.css">
+
+<head>
+    <h1>My Love of Cats</h1>
+    <ul>
+        <li>Other Pages:</li>
+        <li><a href="./cats2.html">Cat Image Gallery </a></li>
+        <li><a href="./cats3.html">Future Cat Names </a></li>
+      </ul>
+
+      <h2>the rest of HW 3</h2>
+      <ul>
+        <li><a href="../Technical/technical.html">Technical</a></li>
+        <li><a href="../Tutorials/">Tutorials</a></li>
+      </ul>
+</head>
+
+<body>
+    <img src="../../../Assets/meWcat.jpeg" id="mainImg" alt="me with a cat" class="center">
+
+
+    <button onclick="toggle();">Read me</button>
+    <p>(double click for the first time!)</p>
+
+
+    <div>
+        <h2 id="mySentence" hidden>
+        This is the creative part that I added on to with JavaScript! Check out the gallery and names pages!
+        </h2>
+        <br /><br />
+    </div>
+
+   <script> 
+        let toggle = () => {
+      
+          let element = document.getElementById("mySentence");
+          let hidden = element.getAttribute("hidden");
+      
+          if (hidden) {
+             element.removeAttribute("hidden");
+          } else {
+             element.setAttribute("hidden", "true");
+          }
+        }
+      </script>
+
+</body>
+
+</html>
