@@ -1,0 +1,72 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: For Loops
+-->
+
+<html>
+
+    <head>
+        <h1>JavaScript For Loops</h1>
+        <p>for loops allow us to iterate over arrays</p>
+    </head>
+    <body>
+        <h2>Different Kinds of loops</h2>
+        <ul>
+            <li><a href="../tutorials/JST9.html">JS For Loops Tutorial </a></li>
+            <li>for/in</li>
+            <li>for/of</li>
+            <li>while</li>
+            <li>do/while</li>
+        </ul>
+
+        <h2>For Loops</h2>
+
+        <p>The for statement creates a loop with 3 optional expressions</p>
+        <pre>
+            for (expression 1; expression 2; expression 3) {
+                // code block to be executed
+              }
+        </pre>
+        <p><b>Expression 1</b> is executed (one time) before the execution of the code block.</p>
+        <p><b>Expression 2</b> defines the condition for executing the code block.</p>
+        <p><b>Expression 3</b> is executed (every time) after the code block has been executed.</p>
+
+        <h2>Example</h2>
+
+        <p id="demo"></p>
+
+    <script>
+    let text = "";
+
+    for (let i = 0; i < 5; i++) {
+    text += "The number is " + i + "<br>";
+    }
+
+    document.getElementById("demo").innerHTML = text;
+    </script>
+
+    <p>Above is produces by a for loop iterating 5 times</p>
+    <p><b>Expression 1:</b> "let i = 0;"</p>
+    <p><b>Expression 2:</b> "i < 5; "</p>
+    <p><b>Expression 3:</b> "i++"</p>
+    <p><b>Full For Loop Used:</b></p>
+    <pre>
+        let text = "";
+
+    for (let i = 0; i < 5; i++) {
+    text += "The number is " + i + "<br>";
+    }
+
+    document.getElementById("demo").innerHTML = text;
+    </pre>
+
+
+
+
+
+
+
+
+    </body>
+</html>

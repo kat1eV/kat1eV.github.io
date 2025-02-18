@@ -1,0 +1,124 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: Functions
+-->
+<html>
+    <head>
+        <h1>JavaScript Functions</h1>
+    </head>
+    <body>
+        <h2>Functions</h2>
+        <p>A JavaScript function is a block of code designed to perform a particular task.</p>
+        <p>A JavaScript function is executed when "something" invokes it (calls it).</p>
+
+        <h3>Example:</h3>
+
+        <p>Call a function which performs a calculation and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+
+let result = myFunction(4, 3);
+document.getElementById("demo").innerHTML = result;
+</script>
+
+
+
+<h2>Function Syntax</h2>
+<p>written by keyword <b>function</b> followed by a <b>name</b> and then followed by <b>()</b></p>
+<p>Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).</p>
+
+<p>The parentheses may include parameter names separated by commas:<b>(parameter1, parameter2, ...)</b>  </p>
+
+<p>The code to be executed, by the function, is placed inside curly brackets: {}</p>
+
+<h3>Syntax:</h3>
+<pre>
+    script>
+    function myFunction(p1, p2) {
+        return p1 * p2;
+      }
+      
+      let result = myFunction(4, 3);
+      document.getElementById("demo").innerHTML = result;
+
+</pre>
+
+<p><b>parameters</b> are listed inside the parentheses () in the function definition.</p>
+<p>function <b>arguments</b> are the <b>values</b> recieved by the function when it is invoked</p>
+<p>Inside the function, the arguments (the parameters) behave as local variables.</p>
+
+
+<h2>Function Invocation</h2>
+<p>Inside the function, the arguments (the parameters) behave as local variables.</p>
+<ul>
+    <li>When an event occurs (when a user clicks a button)</li>
+    <li>When it is invoked (called) from JavaScript code</li>
+    <li>Automatically (self invoked)</li>
+</ul>
+
+
+<h2>Function Return</h2>
+<p>return stops a function from executing anymore</p>
+<p>If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement.</p>
+<p>Functions often compute a <b>return value</b>. The return value is "returned" back to the "caller":</p>
+
+<p>Call a function which performs a calculation and returns the result:</p>
+
+<p id="demo1"></p>
+
+<script>
+let x = nextFunction(4, 3);
+document.getElementById("demo1").innerHTML = x;
+
+function nextFunction(a, b) {
+  return a * b;
+}
+</script>
+
+<h2>The () Operator</h2>
+<p>The () operator invokes (calls) the function</p>
+<p>Example, Convert Fahrenheit to Celsius</p>
+<p id="demo2"></p>
+
+<script>
+function toCelsius(f) {
+  return (5/9) * (f-32);
+}
+
+let value = toCelsius(77);
+document.getElementById("demo2").innerHTML = value;
+</script>
+
+<p>Accessing a function with incorrect parameters can return an incorrect answer</p>
+<p>Accessing a function without () returns the function and not the function result</p>
+
+
+<h2>Functions Used As Variable Values</h2>
+<p>Functions can be used the same way as you use variables, in all types of formulas, assignments, and calculations.</p>
+
+Instead of using a variable to store the return value of a function
+<p id="demo3"></p>
+
+<script>
+let text = "The temperature is " + toCelsius(77) + " Celsius.";
+document.getElementById("demo3").innerHTML = text;
+
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+</script>
+
+<h2>Local Variables</h2>
+<p>Variables declared within a JavaScript function, become LOCAL to the function.</p>
+<p>Local variables can only be accessed from within the function.</p>
+<p>Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.</p>
+<p>Local variables are created when a function starts, and deleted when the function is completed.</p>
+
+    </body>
+</html>

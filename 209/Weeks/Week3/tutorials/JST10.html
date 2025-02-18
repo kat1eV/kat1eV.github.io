@@ -1,0 +1,75 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: Debugging
+-->
+<html>
+    <head>
+        <h1>JavaScript Debugging</h1>
+        <p>debugging is not easy, but there are many browsers that support JavaScript and HTML debugging</p>
+    </head>
+    <body>
+        <h2>Methods</h2>
+        <ul>
+            <li>console.log()</li>
+            <li>setting break points</li>
+            <li>using keywords</li>
+        </ul>
+
+        <h2>console.log() Method</h2>
+        <pre> script
+            a = 5;
+            b = 6;
+            c = a + b;
+            console.log(c);
+        </pre>
+
+
+        <script>
+            a = 5;
+            b = 6;
+            c = a + b;
+            console.log(c);
+            </script>
+
+        <h2>setting breakpoints Method</h2>
+
+        <p>In the debugger window, you can set breakpoints in the JavaScript code.</p>
+        <p>At each breakpoint, JavaScript will stop executing, and let you examine JavaScript values.</p>
+        <p>After examining values, you can resume the execution of code (typically with a play button).</p>
+
+
+        <h2>keyword Method</h2>
+        <p>the keyword <b>debugger</b> stops the execution of JavaScript, and calls (if available) the debugging function. </p>
+        <p>This has the same function as setting a breakpoint in the debugger.</p>
+        <p>If no debugging is available, the debugger statement has no effect.</p>
+        <p>With the debugger turned on, this code will stop executing before it executes the third line.</p>
+
+
+        <p id="demo"></p>
+
+<p>With the debugger turned on, the code below should stop executing before it executes the third line.</p>
+
+<script>
+let x = 15 * 5;
+debugger;
+document.getElementById("demo").innerHTML = x;
+</script>
+
+
+
+
+
+
+
+
+        <h2>Browser Debugging Tools</h2>
+
+        <h3>Chrome</h3>
+        <p>menu-> "more tools"-> "developer tools"-> "console"</p>
+        
+        <h3>Safari</h3>
+        <p>"prefrences"-> advanced-> check "enable show development menu in menu bar"-> when new option "Develop" appears click "Show error console" </p>
+
+    </body>
+</html>
