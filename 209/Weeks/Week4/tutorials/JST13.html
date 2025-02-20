@@ -1,0 +1,138 @@
+<!--Katherine Vogt
+    CSC209
+    JavaScript Tutorials
+    Tutorial: HTML DOM Events
+-->
+<html>
+<head>
+    <h1>JavaScript HTML DOM Events</h1>
+</head>
+<body>
+    <h3>HTML DOM allows JavaScript to react to HTML events</h3>
+
+
+    <h2>Reacting to Events</h2>
+    <p>A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element.</p>
+    <p>To execute code when a user clicks on an element, add JavaScript code to an HTML event attribute:</p>
+
+    <pre>onclick=JavaScript</pre>
+
+    <ul>HTML Events Examples:
+        <li>clicking the mouse</li>
+        <li>web page loading</li>
+        <li>mouse moving over an element</li>
+        <li>input field changing</li>
+        <li>HTML form submission</li>
+        <li>pressing a key</li>
+
+        <h2>Example:</h2>
+        <h1>JavaScript HTML Events</h1>
+        <h2>The onclick Attribute</h2>
+
+        <h2 onclick="this.innerHTML='Ooops!'">Click on this text!</h2>
+
+        <pre>
+            onclick="this.innerHTML='Ooops!'">Click on this text!
+        </pre>
+
+        <h2>In this example, a function is called from the event handler:</h2>
+
+        <h2 onclick="changeText(this)">Click on this text!</h2>
+
+        <script>
+        function changeText(id) {
+        id.innerHTML = "Ooops!";
+        }
+        </script>
+        <pre>
+            function changeText(id) {
+                id.innerHTML = "Ooops!";
+                }
+        </pre>
+
+
+
+        <h1>HTML Event Attributes</h1>
+        <h2>Event Attributes allow us to assign events to HTML elements</h2>
+        <p>Assign an onclick event to a button element:</p>
+
+        <h2>The onclick Attribute</h2>
+
+        <p>Click the button to display the date.</p>
+        <button onclick="displayDate()">The time is?</button>
+
+        <script>
+        function displayDate() {
+        document.getElementById("demo1").innerHTML = Date();
+        }
+        </script>
+
+        <p id="demo1"></p>
+
+        <p>In the example above, a function named displayDate will be executed when the button is clicked</p>
+
+        <pre>
+            function displayDate() {
+                document.getElementById("demo1").innerHTML = Date();
+            }
+        </pre>
+
+        <h1>Assign Events using the HTML DOM</h1>
+        <h2>The HTML DOM allows you to assign events to HTML elements using JavaScript:</h2>
+
+        <p>Assign an onclick event to a button element:</p>
+
+        <p>Click "Try it" to execute the displayDate() function.</p>
+        <button id="myBtn">Try it</button>
+
+        <p id="demo"></p>
+
+        <script>
+        document.getElementById("myBtn").onclick = displayDate;
+
+        function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+        }
+        </script>
+
+        <p>In the example above, a function named displayDate is assigned to an HTML element with the id="myBtn".</p>
+
+        <pre>
+            document.getElementById("myBtn").onclick = displayDate;
+
+        function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+        }
+        </pre>
+
+        <p>The function will be executed when the button is clicked</p>
+
+        <h1>The Onload and Onunload Events </h1>
+        <p>The <b>onload</b> and <b>onunload</b> events are triggered when the user enters or leaves the page.</p>
+        <p>The <b>onload</b> event can be used to check the visitor's browser type and browser version, and load the proper version of the web page based on the information.</p>
+        <p>The <b>onload</b> and <b>onunload</b> events can be used to deal with cookies.</p>
+
+        
+
+
+   
+
+
+
+
+</body>
+    </ul>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+</html>

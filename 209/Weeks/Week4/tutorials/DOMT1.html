@@ -1,0 +1,104 @@
+<!--Katherine Vogt
+    CSC209
+    DOM Tutorials
+    Tutorial: Button Object
+-->
+
+<html>
+    <head>
+        <h1>Button Object</h1>
+    </head>
+    <body>
+        <h2>Input Button Obj</h2>
+        <p>You can access an input element with type="button" by using getElementById():</p>
+        <p>Example</p>
+        <h3>A demonstration of how to access an Input Button</h3>
+
+        <p>Click the button to get the text that is displayed on the button.</p>
+
+        <input type="button" id="myBtn" onclick="myFunct()" value="Try it">
+
+        <p id="demo"></p>
+
+        <script>
+        function myFunct() {
+        var x = document.getElementById("myBtn").value;
+        document.getElementById("demo").innerHTML = x;
+        }
+        </script>
+
+        <pre>
+            function myFunct() {
+                var x = document.getElementById("myBtn").value;
+                document.getElementById("demo").innerHTML = x;
+                }
+        </pre>  
+        
+        <h3>Create an Input Button Obj</h3>
+        <p>You can create an input element with type="button" by using the document.createElement() method:</p>
+
+        <p>Click the button to create an Input Button with a "Click me" text.</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <script>
+        function myFunction() {
+        var x = document.createElement("INPUT");
+        x.setAttribute("type", "button");
+        x.setAttribute("value", "Click me");
+        document.body.appendChild(x);
+        }
+        </script>
+
+        <pre>
+            function myFunction() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "button");
+                x.setAttribute("value", "Click me");
+                document.body.appendChild(x);
+                }
+        </pre>
+
+        <h2>Input Button Obj Properties </h2>
+        <table>
+            <tr>
+                <th>Property</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <th>autofocus</th>
+                <th>Sets or returns whether an input button should automatically get focus when the page loads</th>
+            </tr>
+            <tr>
+                <th>defaultValue</th>
+                <th>Sets or returns the default value of an input button</th>
+            </tr>
+            <tr>
+                <th>disabled</th>
+                <th>Sets or returns whether an input button is disabled, or not</th>
+            </tr>
+            <tr>
+                <th>form</th>
+                <th>Returns a reference to the form that contains the input button</th>
+            </tr>
+            <tr>
+                <th>name</th>
+                <th>Sets or returns the value of the name attribute of an input button</th>
+            </tr>
+            <tr>
+                <th>type</th>
+                <th>Returns which type of form element the input button is</th>
+            </tr>
+            <tr>
+                <th>value</th>
+                <th>Sets or returns the value of the value attribute of an input button</th>
+            </tr>
+        </table>
+
+        <h2>Standard Properties and Events</h2>
+        <p>The Input Button object also supports the standard properties and events.</p>
+
+
+
+    </body>
+</html>
