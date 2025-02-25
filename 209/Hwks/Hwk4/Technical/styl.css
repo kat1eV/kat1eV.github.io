@@ -19,3 +19,26 @@
     position: absolute;
     background-color: blue;
     }
+
+#container2{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: black;
+    }
+
+    #pinkC {
+    width: 50px;
+    height: 50px;
+    top: 350px;
+    left: 350px;
+    position: absolute;
+    background-color: deepPink;
+    }
+    
+    #redS {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    }  

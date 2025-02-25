@@ -1,7 +1,7 @@
    
-function moveRed()
+function moveS()
 {   
-    var redSquare = document.getElementById("redSq");   
+    var redSquare = document.getElementById("redS");   
     var redPos = 0;
     var stepRedId = setInterval(stepRed, 10);
     // Get speed from dropdown
@@ -18,9 +18,9 @@ function moveRed()
     }
 }
 
-function moveBlue()
+function moveC()
 {   
-    var blueSquare = document.getElementById("blueSq");   
+    var blueSquare = document.getElementById("pinkC");   
     var bluePos = 350;
     var stepBlueId = setInterval(stepBlue, 10);
     // Get speed from dropdown
