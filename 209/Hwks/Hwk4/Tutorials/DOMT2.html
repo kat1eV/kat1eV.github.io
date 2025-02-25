@@ -1,0 +1,503 @@
+<!--Katherine Vogt
+    CSC209
+    DOM Tutorials
+    Tutorial: Graphics
+-->
+<html>
+    <head>
+        <h1>HTML DOM Graphics</h1>
+        <button onclick="location.href='DOMT3.html'">GUI</button>
+    </head>
+    <body>
+        <h1>HTML Canvas Object </h1>
+        <h2>Learn Canvas</h2>
+        <p>The HTML "canvas" element is used to draw graphics on a screen page </p>
+        <p>it is only a container for graphics. Must use script to actually draw the graphics</p>
+        <p>It can draw text and graphics</p>
+
+        <h2>Canvas Object can be animated</h2>
+        <p>Canvas objects can move. Everything is possible: from simple bouncing balls to complex animations.</p>
+        <p>They can also be interactive and used for games </p>
+
+        <h3>EX:</h3>
+
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+            Sorry, your browser does not support canvas.
+            </canvas>
+
+        <h1>Drawing on Canvas</h1>
+        <h2>Drawing on Canvas with JavaScript</h2>
+        <h3>EX:</h3>
+
+        <canvas id="myCanvas2" width="200" height="100" style="border:1px solid black;">
+            Sorry, your browser does not support canvas.
+            </canvas>
+            
+            <script>
+            const canvas = document.getElementById("myCanvas2");
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = "red";
+            ctx.fillRect(0,0,150,75);
+            </script>
+
+            <pre>
+                canvas id="myCanvas2" width="200" height="100" style="border:1px solid black;">
+                    Sorry, your browser does not support canvas.
+                   canvas
+
+                script
+            const canvas = document.getElementById("myCanvas2");
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = "red";
+            ctx.fillRect(0,0,150,75);
+            script
+            </pre>
+
+            <h2>Step 1: Find Canvas Element</h2>
+            <p>You access a <b>canvas</b> element with the HTML DOM method <b>getElementById()</b>:</p>
+            <pre>
+                const canvas = document.getElementById("myCanvas");
+            </pre>
+
+            <h2>Step 2: Create a Drawing Object</h2>
+            <p>The <b>getContext()</b> method returns an object with tools (properties and methods) for drawing:</p>
+            <pre>
+                const ctx = canvas.getContext("2d");
+            </pre>
+
+            <h2>Step 3: Draw on the Canvas</h2>
+            <p>Finally, you can draw on the canvas.</p>
+            <p>The fillStyle property can be a color, a gradient, or a pattern. The default fillStyle is black.</p>
+            <p>The fillRect(x, y, width, height) method draws the rectangle, filled with the fill style color, on the canvas:</p>
+
+            <pre>
+                ctx.fillRect(0, 0, 150, 75);
+            </pre>
+
+
+            <canvas id="myCanvas3" width="200" height="100" style="border:1px solid black;">
+                Sorry, your browser does not support canvas.
+                </canvas>
+
+                <script>
+                    const canvas2 = document.getElementById("myCanvas3");
+                    const ctxx = canvas2.getContext("2d");
+                    ctxx.fillStyle = "blue";
+                    ctxx.fillRect(10, 20, 150, 75);
+                </script>
+
+
+
+                <h1>Canvas Coordinates</h1>
+                <p>The HTML canvas is a two-dimensional grid.The upper-left corner of the canvas has the coordinates (0,0).</p>
+               
+
+
+                <h2>Draw a circle</h2>
+                <p>To draw a circle on a canvas, use the following methods:</p>
+                <ul>
+                    <li>beginPath() - begins a path</li>
+                    <li>arc(x, y, r, startangle, endangle) - creates an arc/curve. To create a circle with arc(): Set startangle to 0 and endangle to 2*Math.PI. 
+                        (The x- and y-coordinates define the center of the circle. r defines the radius of the circle)</li>
+                    <li>Define a circle with the arc() method. Then use the stroke() method to actually draw the circle</li>
+                </ul>
+
+                <canvas id="myCanvas4" width="200" height="100" style="border:1px solid black;">
+                    Sorry, your browser does not support canvas.
+                    </canvas>
+
+                <script>
+                    const canvass = document.getElementById("myCanvas4");
+                    const ctxxx = canvass.getContext("2d");
+                    
+                    ctxxx.beginPath();
+                    ctxxx.arc(95, 50, 40, 0, 2 * Math.PI);
+                    ctxxx.stroke();
+                    </script>
+
+                <pre>
+                    const canvass = document.getElementById("myCanvas4");
+                    const ctxxx = canvass.getContext("2d");
+                    
+                    ctxxx.beginPath();
+                    ctxxx.arc(95, 50, 40, 0, 2 * Math.PI);
+                    ctxxx.stroke();
+                </pre>
+
+                <h1>Gradients</h1>
+
+                <h2>2 Types of gradients</h2>
+                <ul>
+                    <li>createLinearGradient()</li>
+                    <li>createRadialGradient()</li>
+                </ul>
+
+                <h2>Linear Gradient</h2>
+                <p>A linear gradient changes color along a linear pattern (horizontally/vertically/diagonally).</p>
+                <p>The createLinearGradient() method has the following parameters:</p>
+                <ul>
+                    <li>x0 -> Required x-coordinate of the start point</li>
+                    <li>y0 -> Required y-coordinate of the start point</li>
+                    <li>x1 -> Required x-coordinate of the end point</li>
+                    <li>y1 -> Required y-coordinate of the end point</li>
+                </ul>
+
+                <p>The gradient object requires two or more color stops.</p>
+                <p>The addColorStop() method specifies the color stops, and its position along the gradient. The positions can be anywhere between 0 and 1.</p>
+                <p>To use the gradient, assign it to the fillStyle or strokeStyle property, then draw the shape (rectangle, circle, shape, or text).</p>
+
+                <h3>Example:</h3>
+
+                <canvas id="myCanvass" width="300" height="150" style="border:1px solid grey;">
+                    Sorry, your browser does not support canvas.
+                    </canvas>
+                    
+                    <script>
+                    const c = document.getElementById("myCanvass");
+                    const con = c.getContext("2d");
+                    
+                    // Create linear gradient
+                    const grad=con.createLinearGradient(0,0,280,0);
+                    grad.addColorStop(0, "lightblue");
+                    grad.addColorStop(1, "darkblue"); 
+                    
+                    // Fill rectangle with gradient
+                    con.fillStyle = grad;
+                    con.fillRect(10,10,280,130);
+                    </script>
+                <pre>
+                    const c = document.getElementById("myCanvass");
+                    const con = c.getContext("2d");
+
+                    // Create linear gradient
+                    const grad=con.createLinearGradient(0,0,280,0);
+                    grad.addColorStop(0, "lightblue");
+                    grad.addColorStop(1, "darkblue"); 
+
+                    // Fill rectangle with gradient
+                    con.fillStyle = grad;
+                    con.fillRect(10,10,280,130);
+                </pre>
+
+                <canvas id="myCanvas5" width="300" height="150" style="border:1px solid grey;">
+                    Sorry, your browser does not support canvas.
+                    </canvas>
+                    
+                    <script>
+                    const can = document.getElementById("myCanvas5");
+                    const ctxs = can.getContext("2d");
+                    
+                    // Create linear gradient
+                    const grads=ctxs.createLinearGradient(0,0,280,0);
+                    grads.addColorStop(0, "lightblue");
+                    grads.addColorStop(1, "darkblue"); 
+                    
+                    // Fill outlined rectangle with gradient
+                    ctxs.lineWidth = 10;
+                    ctxs.strokeStyle = grad;
+                    ctxs.strokeRect(10,10,280,130);
+                    </script>
+
+                    <pre>
+                        const can = document.getElementById("myCanvas5");
+                        const ctxs = can.getContext("2d");
+                        
+                        // Create linear gradient
+                        const grads=ctxs.createLinearGradient(0,0,280,0);
+                        grads.addColorStop(0, "lightblue");
+                        grads.addColorStop(1, "darkblue"); 
+                        
+                        // Fill outlined rectangle with gradient
+                        ctxs.lineWidth = 10;
+                        ctxs.strokeStyle = grad;
+                        ctxs.strokeRect(10,10,280,130)
+                    </pre>
+
+                    <h3>Create a linear gradient with three color stops, a light blue color at the starting point of the gradient, a purple color at the middle point of the gradient, and a dark blue color at the ending point. Then, fill the rectangle with the gradient:</h3>
+
+                    <canvas id="myCanvas6" width="300" height="150" style="border:1px solid grey;">
+                        Sorry, your browser does not support canvas.
+                        </canvas>
+                        
+                        <script>
+                        const canv = document.getElementById("myCanvas6");
+                        const ctxy = canv.getContext("2d");
+                        
+                        // Create linear gradient
+                        const gradi=ctxy.createLinearGradient(0,0,280,0);
+                        gradi.addColorStop(0, "lightblue");
+                        gradi.addColorStop(0.5, "purple");
+                        gradi.addColorStop(1, "darkblue"); 
+                        
+                        // Fill rectangle with gradient
+                        ctxy.fillStyle = gradi;
+                        ctxy.fillRect(10,10,280,130);
+                        </script>
+
+                        <pre>
+                            // Create linear gradient
+                            const gradi=ctxy.createLinearGradient(0,0,280,0);
+                            gradi.addColorStop(0, "lightblue");
+                            gradi.addColorStop(0.5, "purple");
+                            gradi.addColorStop(1, "darkblue"); 
+                            
+                            // Fill rectangle with gradient
+                            ctxy.fillStyle = gradi;
+                            ctxy.fillRect(10,10,280,130);
+                        </pre>
+
+                        <h3>Vertical Linear Gradient</h3>
+
+                        <canvas id="myCanvas7" width="300" height="150" style="border:1px solid grey;">
+                            Sorry, your browser does not support canvas.
+                            </canvas>
+                            
+                            <script>
+                            const ca = document.getElementById("myCanvas7");
+                            const ctxer = ca.getContext("2d");
+                            
+                            // Create linear gradient
+                            const gradie=ctxer.createLinearGradient(0,0,0,130);
+                            gradie.addColorStop(0, "lightblue");
+                            gradie.addColorStop(1, "darkblue"); 
+                            
+                            // Fill rectangle with gradient
+                            ctxer.fillStyle = gradie;
+                            ctxer.fillRect(10,10,280,130);
+                            </script>
+
+                        <pre>
+                            // Create linear gradient
+                            const gradie=ctxer.createLinearGradient(0,0,0,130);
+                            gradie.addColorStop(0, "lightblue");
+                            gradie.addColorStop(1, "darkblue"); 
+                            
+                            // Fill rectangle with gradient
+                            ctxer.fillStyle = gradie;
+                            ctxer.fillRect(10,10,280,130);
+                        </pre>
+
+                        <h3>Diagonal Linear Gradient</h3>
+                        <canvas id="myCanvas8" width="300" height="150" style="border:1px solid grey;">
+                            Sorry, your browser does not support canvas.
+                            </canvas>
+                            
+                            <script>
+                            const canva = document.getElementById("myCanvas8");
+                            const cont = canva.getContext("2d");
+                            
+                            // Create linear gradient
+                            const gradien=cont.createLinearGradient(0,0,280,130);
+                            gradien.addColorStop(0, "lightblue");
+                            gradien.addColorStop(1, "darkblue"); 
+                            
+                            // Fill rectangle with gradient
+                            cont.fillStyle = gradien;
+                            cont.fillRect(10,10,280,130);
+                            </script>
+
+                        <pre>
+                            // Create linear gradient
+                            const gradien=cont.createLinearGradient(0,0,280,130);
+                            gradien.addColorStop(0, "lightblue");
+                            gradien.addColorStop(1, "darkblue"); 
+                            
+                            // Fill rectangle with gradient
+                            cont.fillStyle = gradien;
+                            cont.fillRect(10,10,280,130);
+                        </pre>
+
+                        <h3>Fill A Circle W/ Gradient</h3>
+
+                        <canvas id="myCanvas9" width="300" height="150" style="border:1px solid grey;">
+                            Sorry, your browser does not support canvas.
+                            </canvas>
+                            
+                            <script>
+                            const cnvs = document.getElementById("myCanvas9");
+                            const contx = cnvs.getContext("2d");
+                            
+                            // Create linear gradient
+                            const gr=contx.createLinearGradient(0,0,280,0);
+                            gr.addColorStop(0, "lightblue");
+                            gr.addColorStop(1, "darkblue");
+                            
+                            // Fill circle with gradient
+                            contx.beginPath();
+                            contx.arc(145, 75, 65, 0, 2 * Math.PI);
+                            contx.fillStyle = gr;
+                            contx.fill();
+                            </script>
+
+                        <pre>
+                            // Create linear gradient
+                            const gr=contx.createLinearGradient(0,0,280,0);
+                            gr.addColorStop(0, "lightblue");
+                            gr.addColorStop(1, "darkblue");
+                            
+                            // Fill circle with gradient
+                            contx.beginPath();
+                            contx.arc(145, 75, 65, 0, 2 * Math.PI);
+                            contx.fillStyle = gr;
+                            contx.fill();
+                        </pre>
+
+                        <h3>Fill Text W/ Gradient</h3>
+                        
+                        <canvas id="myCanvas10" width="300" height="150" style="border:1px solid grey;">
+                            Sorry, your browser does not support canvas.
+                            </canvas>
+                            
+                            <script>
+                            const kanvas = document.getElementById("myCanvas10");
+                            const ktx = kanvas.getContext("2d");
+                            
+                            // Create linear gradient
+                            const gd=ktx.createLinearGradient(0,0,280,0);
+                            gd.addColorStop(0, "lightblue");
+                            gd.addColorStop(1, "darkblue");
+                            
+                            // Fill text with gradient
+                            ktx.font = "50px Arial";
+                            ktx.fillStyle = gd;
+                            ktx.fillText("Hello World",10,80);
+                            </script>
+
+                        <pre>
+                            // Create linear gradient
+                            const gd=ktx.createLinearGradient(0,0,280,0);
+                            gd.addColorStop(0, "lightblue");
+                            gd.addColorStop(1, "darkblue");
+                            
+                            // Fill text with gradient
+                            ktx.font = "50px Arial";
+                            ktx.fillStyle = gd;
+                            ktx.fillText("Hello World",10,80);
+                        </pre>
+
+                        <h3>Fill Outlined Text W/ Gradient</h3>
+
+                        <canvas id="myKanvas" width="300" height="150" style="border:1px solid grey;">
+                            Sorry, your browser does not support canvas.
+                            </canvas>
+                            
+                            <script>
+                            const k = document.getElementById("myKanvas");
+                            const kktx = k.getContext("2d");
+                            
+                            // Create linear gradient
+                            const grd=kktx.createLinearGradient(0,0,280,0);
+                            grd.addColorStop(0, "lightblue");
+                            grd.addColorStop(1, "darkblue");
+                            
+                            // Fill outlined text with gradient
+                            kktx.font = "50px Arial";
+                            kktx.strokeStyle = grd;
+                            kktx.strokeText("Hello World",10,80);
+                            </script>
+
+                        <pre>
+                            // Create linear gradient
+                            const grd=kktx.createLinearGradient(0,0,280,0);
+                            grd.addColorStop(0, "lightblue");
+                            grd.addColorStop(1, "darkblue");
+                            
+                            // Fill outlined text with gradient
+                            kktx.font = "50px Arial";
+                            kktx.strokeStyle = grd;
+                            kktx.strokeText("Hello World",10,80);
+                        </pre>
+
+                    <h2>Radial Gradients-----------------------------------------------</h2>
+
+                    <canvas id="myCanvas11" width="300" height="150" style="border:1px solid grey;">
+                        Sorry, your browser does not support canvas.
+                        </canvas>
+                        
+                        <script>
+                        const kan = document.getElementById("myCanvas11");
+                        const kntx = kan.getContext("2d");
+                        
+                        // Create gradient
+                        const grdnt=kntx.createRadialGradient(150,75,15,150,75,150);
+                        grdnt.addColorStop(0,"lightblue");
+                        grdnt.addColorStop(1,"darkblue");  
+                        
+                        // Fill rectangle with gradient
+                        kntx.fillStyle = grdnt;
+                        kntx.fillRect(10,10,280,130);
+                        </script>
+
+                    <pre>
+                        // Create gradient
+                        const grdnt=kntx.createRadialGradient(150,75,15,150,75,150);
+                        grdnt.addColorStop(0,"lightblue");
+                        grdnt.addColorStop(1,"darkblue");  
+                        
+                        // Fill rectangle with gradient
+                        kntx.fillStyle = grdnt;
+                        kntx.fillRect(10,10,280,130);</pre>
+
+                    <p>Main difference is the const grdnt=kntx.createRadialGradient(150,75,15,150,75,150); AND</p>
+                    <ul>Parameters for Radial Gradient
+                        <li>x0	-> Required. The x-coordinate of the start circle</li>
+                        <li>y0	-> Required. The y-coordinate of the start circle</li>
+                        <li>r0	-> Required. The radius of the start circle</li>
+                        <li>x1	-> Required. The x-coordinate of the end circle</li>
+                        <li>y1	-> Required. The y-coordinate of the end circle</li>
+                        <li>r1	-> Required. The radius of the end circle</li>
+
+                    </ul>
+
+                    <h2>3 Color Radial Gradient</h2>
+
+                    <canvas id="Canvas" width="300" height="150" style="border:1px solid grey;">
+                        Sorry, your browser does not support canvas.
+                        </canvas>
+                        
+                        <script>
+                        const knvs = document.getElementById("Canvas");
+                        const ktxy = knvs.getContext("2d");
+                        
+                        // Create gradient
+                        const g=ktxy.createRadialGradient(150,75,15,150,75,150);
+                        g.addColorStop(0,"lightblue");
+                        g.addColorStop(0.3,"pink");
+                        g.addColorStop(1,"darkblue");  
+                        
+                        // Fill rectangle with gradient
+                        ktxy.fillStyle = g;
+                        ktxy.fillRect(10,10,280,130);
+                        </script>
+
+                    <pre>
+                        // Create gradient
+                        const g=ktxy.createRadialGradient(150,75,15,150,75,150);
+                        g.addColorStop(0,"lightblue");
+                        g.addColorStop(0.3,"pink");
+                        g.addColorStop(1,"darkblue");  
+                        
+                        // Fill rectangle with gradient
+                        ktxy.fillStyle = g;
+                        ktxy.fillRect(10,10,280,130);
+                    </pre>
+
+
+
+                
+            
+
+
+
+
+
+
+    </body>
+
+
+
+
+
+
+
+</html>
