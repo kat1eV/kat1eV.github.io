@@ -24,7 +24,7 @@
     width: 400px;
     height: 400px;
     position: relative;
-    background: linear-gradient(rgb(0, 0, 146), black, rgb(84, 0, 153));
+    background: radial-gradient(rgb(143, 210, 255),rgb(255, 255, 255), rgb(115, 0, 150));
     }
 
     #comet1 {

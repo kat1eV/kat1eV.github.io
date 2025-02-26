@@ -1,12 +1,12 @@
 <html>
     <head>
-        <link rel="stylesheet" href="styl.css">
+        <link id="stylesheet" rel="stylesheet" href="styl.css">
         <script src="javaScript.js"></script>
     </head>
 
     <body>
         <h2>Katie's Week #4 Animation Completed</h2>
-        <p><b>(Added speed aspect!)</b></p>
+        <p><b>Technnical (Added speed aspect!): 2hrs</b></p>
 
     
         <label for="redSpeed">Red square speed</label>
@@ -31,34 +31,24 @@
         </div>
 
 
-
-
+        <h2>Expanded Version</h2>
+        <h3>Technical pt2 & Creative: 5hrs</h3>
 
         
-        <h2>Expanded Version</h2>
-
-
-        <label for="circleSpeed">Circle speed</label>
-        <select id="circleSpeed">
+        <label for="cometSpeed">Comets' Speed</label>
+        <select id="cometSpeed">
             <option value=30>Slow</option>
             <option value=20>Medium</option>
             <option value=10>Fast</option>
         </select>
-        <button id="moveCBtn" onclick="moveC()">move circle</button> <br><br>  
-
-        <label for="squareSpeed">Square speed</label>
-        <select id="squareSpeed">
-            <option value=30>Slow</option>
-            <option value=20>Medium</option>
-            <option value=10>Fast</option>
-        </select>
-        <button id="moveSBtn" onclick="moveS()">move square</button> <br><br>  
+        <button id="moveCom" onclick="moveComets()">Move Comets</button> <br><br>  
     
         <div id ="container2">
-            <div id ="pinkC"></div>
-            <div id ="redS"></div>
+            <div id="comet1" class="comet"></div>
+            <div id="comet2" class="comet"></div>
+            <div id="comet3" class="comet"></div>
+            <div id="comet4" class="comet"></div>
         </div>
-
     </body>
 
 
