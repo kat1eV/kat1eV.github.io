@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link  rel="stylesheet" href="./JS&CS/style.css">
+    </head>
+    <body>
+        <p><b>Techinical Total Time:</b> </p>
+        <p>Technical: 4hrs</p>
+        <p>Creative: 2hrs</p>
+        <p>Tutorials: 2hrs</p>
+        <h1>Fishes in a Tank</h1>
+        <button id="genFish" onclick="initializeDisks()">Generate Fish</button> <br><br> 
+        <button id="moveFish" onclick="animate()">Animate Fish</button> <br><br> 
+        <button id="random" onclick="randomize()">Randomize</button> <br><br>  
+
+
+
+
+        <canvas id="myCanvas" width="1000" height="1000" style="border:1px solid #000000;">
+            Your browser does not support the HTML canvas tag.
+        </canvas>
+
+
+
+        <!--Global Variables-->
+        <script>
+        const NRPTS = 5;
+        let NRSTEPS = 100;
+        const canvas = document.getElementById("myCanvas");
+
+        const ctx = canvas.getContext("2d");
+
+        // disk array
+        let disks = [];
+
+
+        </script>
+        <script src="./JS&CS/myjava.js"></script>
+
+    </body>
+</html>
