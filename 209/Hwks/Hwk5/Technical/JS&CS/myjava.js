@@ -1,8 +1,15 @@
-
+//MY JAVASCRIPT
 
 //initialize disk array
 function initializeDisks(){
+    const numFish = document.getElementById("numFishInput").value;
+    if (numFish <= 0 || isNaN(numFish)) {
+        alert("enter a valid integer greater than 0");
+        return;
+    }
+    NRPTS = parseInt(numFish);
     disks =[];
+    ogLocation=[];
 
     for(let i = 0; i < NRPTS; i++){
         const disk = {
@@ -10,13 +17,24 @@ function initializeDisks(){
         y: Math.floor((Math.random() * 1000) + 10),
         radius: Math.floor((Math.random() *70) + 20),
         color: anyColor(),
-        speedX: Math.floor((Math.random() * 200) + 20), // x-direction speed
-        speedY: Math.floor((Math.random() * 200) + 20), // y-direction speed
-        angle: Math.floor((Math.random() *360) + 0) * Math.PI / 180
+        speed:Math.floor((Math.random() * 100) + 50),
+        speedX: Math.floor((Math.random() * 100) + 50), // x-direction speed
+        speedY: Math.floor((Math.random() * 100) + 50), // y-direction speed
+        angle: Math.floor((Math.random() * 360) + 0) * Math.PI / 180 
         };
         disks.push(disk);
+        ogLocation.push({
+            x: disk.x,
+            y: disk.y,
+            radius: disk.radius,
+            color: disk.color,
+            speedX: disk.speedX,
+            speedY: disk.speedY,
+            angle: disk.angle
+        });
     }
     draw();
+    console.log("Generated disks:", disks); // log disks array after generation
 }
 
 
@@ -56,127 +74,81 @@ function randomize(){
 
 
  //draw the vector
- function drawVector(x, y, speedX, speedY, color) {
-    const endX = x + speedX
-    const endY = y - speedY
+ function drawVector(x, y, speed, angle, color) {
+    const endX = x + speed * Math.cos(angle);
+    const endY = y - speed * Math.sin(angle);
 
     ctx.beginPath();
-    ctx.moveTo(x, y);  // Start from the center of the disk
-    ctx.lineTo(endX, endY);  // End at the vector's tip
+    ctx.moveTo(x, y);  // start from the center of the disk
+    ctx.lineTo(endX, endY);  // end at the vector's tip
     ctx.strokeStyle = color;
     ctx.lineWidth = 3;
     ctx.stroke();
 }
 
-// Function to draw everything
+// function to draw everything
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);  // clear the canvas
-  
-  
-
     // looping through all disks in array
     for (let disk of disks) {
         drawDisk(disk.x, disk.y, disk.radius, disk.color);//draws disks
-        drawVector(disk.x, disk.y, disk.speedX, disk.speedY, disk.color);//draws vectors
+        drawVector(disk.x, disk.y, disk.speed, disk.angle, disk.color);//draws vectors
     }
 }
 
-//move fish a step
-function update() {
-    // Loop through each disk and update its position
-    for (let i = 0; i < disks.length; i++) {
-        // Move the disk
-        disks[i].x += disks[i].speedX;
-        disks[i].y += disks[i].speedY;
+//move fish
+function update(){
+    for(let i=0; i< disks.length; i++){
+        console.log(`Updating disk at index ${i}:`, disks[i]); // log each disk for debugging
+        disks[i].x += disks[i].speedX * 0.1; 
+        disks[i].y += disks[i].speedY * 0.1;//used 0.1 to slow down the animation rate
 
-        // Check for collisions with canvas edges (bounce if hits)
-        if (disks[i].x <= 0 || disks[i].x >= canvas.width) {
-            disks[i].speedX = -disks[i].speedX; // Reverse speed in X direction
+        if (disks[i].x === undefined || disks[i].y === undefined || disks[i].speedX === undefined || disks[i].speedY === undefined) {
+            console.error(`Error: Disk at index ${i} is missing required properties`);
+            continue; // skip updating this disk if any required property is undefined
         }
-        if (disks[i].y <= 0 || disks[i].y >= canvas.height) {
-            disks[i].speedY = -disks[i].speedY; // Reverse speed in Y direction
+
+        if(disks[i].x <= 0 || disks[i].x >= canvas.width){
+            disks[i].speedX = -disks[i].speedX; //bounce when it hits wall
+        }
+        if(disks[i].y <= 0 || disks[i].y >= canvas.height){
+            disks[i].speedY = -disks[i].speedY; //bounce when it top or bottom wall
         }
     }
-
-    // Stop the animation after a set number of steps
-    if (NRSTEPS > 0) {
+    if (NRSTEPS > 0){
         NRSTEPS--;
     }
-
-    if (NRSTEPS <= 0) {
-        clearInterval(intervalID); // Stop animation when steps reach 0
+    if(NRSTEPS <= 0){
+        clearInterval(intervalID);//stops animating
     }
 }
 
-// Animate function to repeatedly call update and draw
-function animate() {
+
+//animate fish
+let intervalID;
+function startAnimation(){
+    if(intervalID){
+        clearInterval(intervalID);
+    }
     intervalID = setInterval(() => {
-        draw(); // Draw the disks
-        update(); // Update their positions
-    }, 80); // Call every 80ms (~12.5 FPS)
+        draw();
+        update();
+    },
+    80);
+
+    setInterval(update,20);
 }
 
-
-
-
-
-
-
-
-
-
-
-// function update(){
-//     for(let i=0; i< disks.length; i++){
-//         disk[i].x += disks[i].speedX;
-//         disk[i].y -= disks[i].speedY;
-
-//         if(disk[i].x <= 0 || disk[i].x >= canvas.width){
-//             disk[i].speed.x = -disks[i].speedX; //bounce when it hits wall
-//         }
-//         if(disk[i].y <= 0 || disk[i].y >= canvas.height){
-//             disk[i].speed.y = -disks[i].speedY; //bounce when it top or bottom wall
-//         }
-//     }
-//     if (NRSTEPS > 0){
-//         NRSTEPS--;
-//     }
-//     if(NRSTEPS <= 0){
-//         clearInterval(intervalID);//stops animating
-//     }
-// }
-
-// function animate(){
-//     intervalID = setInterval(() => {
-//         draw();
-//         update();
-//     },
-//     80);//80 ms per frame
-// }
-
-
-
-
-
-
-
-
-// let step = 0;
-// function animate(){
-//     ctx.clearRect(0 , 0 , canvas.width, canvas.height);
-    
-//     function update(){
-//         if(step < NRSTEPS){
-//             for (let disk of disks){
-//                 disk.x += disk.speed //* Math.cos(disk.angle);
-//                 disk.y -= disk.speed //* Math.sin(disk.angle);
-//             }
-//         }
-//         draw();
-//         step++;
-//         requestAnimationFrame(update);  
-//     }
-//     update();
-// }
-
-  
+//reset function
+function reset() {
+    for(i = 0; i < disks.length; i++){
+        for (let i = 0; i < disks.length; i++) {
+            disks[i].x = ogLocation[i].x;
+            disks[i].y = ogLocation[i].y;
+            disks[i].speedX = ogLocation[i].speedX;
+            disks[i].speedY = ogLocation[i].speedY;
+            disks[i].angle = ogLocation[i].angle;
+        }
+        draw();
+    }
+}

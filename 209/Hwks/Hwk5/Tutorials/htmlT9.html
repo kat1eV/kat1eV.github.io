@@ -1,4 +1,84 @@
+<!--Katherine Vogt
+    CSC209
+    HTML Tutorials
+    Tutorial: SVG
+-->
 <html>
     <h1>SVG Graphics</h1>
+    <h2>SVG stands for:</h2>
+    <p><b>S</b>calable <b>V</b>ector <b>G</b>raphics</p>
     
+
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+      </svg>
+    <pre>
+        (inside svg tag)
+
+        width="100" height="100">
+       (open tag) circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow"(close tag)
+
+       (close svg tag)
+    </pre>
+      
+    <p>SVG has several methods for drawing paths, rectangles, circles, polygons, text, and much more.</p>
+
+    <svg width="400" height="120">
+        <rect x="10" y="10" width="200" height="100" stroke="red" stroke-width="6" fill="blue" />
+      </svg>
+
+    <p>We can edit opacity and round corners</p>
+
+    <svg width="400" height="180">
+        <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+        style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+      </svg>
+
+    <pre> style="fill:red;stroke:black;stroke-width:5;opacity:0.5"</pre>
+
+    <p>to make a star:</p>
+    <svg width="300" height="200">
+        <polygon points="100,10 40,198 190,78 10,78 160,198"
+        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+      </svg>
+    <pre>polygon points="100,10 40,198 190,78 10,78 160,198"
+        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"</pre>
+
+    <h2>Gradients and Eclipse Text</h2>
+
+    <svg height="130" width="500">
+        <defs>
+          <linearGradient id="grad1">
+            <stop offset="0%" stop-color="yellow" />
+            <stop offset="100%" stop-color="red" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+        <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+        Sorry, your browser does not support inline SVG.
+      </svg>
+
+      <h2>Difference from Canvas:</h2>
+      <p>SVG is a language for describing 2D graphics in XML, while Canvas draws 2D graphics, on the fly (with JavaScript)</p>
+      <br></br>
+      <p>Canvas is rendered pixel by pixel. In canvas, once the graphic is drawn, it is forgotten by the browser. If its position should be changed, the entire scene needs to be redrawn, including any objects that might have been covered by the graphic.</p>
+
+      <h3>Comparisions:</h3>
+      <ul><b>SVG</b>
+        <li>Resolution independent</li>
+        <li>Support for event handlers</li>
+        <li>Good text rendering capabilities</li>
+        <li>Slow rendering if complex</li>
+        <li>Not suited for game applications</li>
+      </ul>
+      <br></br>
+      <ul><b>Canvas</b>
+        <li>Resolution dependent</li>
+        <li>No support for event handlers</li>
+        <li>Poor text rendering capabilities</li>
+        <li>You can save the resulting image as .png or .jpg</li>
+        <li>Well suited for graphic-intensive games</li>
+      </ul>
+
+
 </html>
