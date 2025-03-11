@@ -1,11 +1,11 @@
-console.log("gameOfLife.js is loaded!");
+
 let generations = 1;
 
   function gen(){    
         const rows = parseInt(document.getElementById("rows").value) || 0;
         const columns = parseInt(document.getElementById("columns").value) || 0;
         const table = document.getElementById("grid");
-        console.log("gen is running!");
+        
         table.innerHTML = "";//clear existing table
         generations == 1;
 
@@ -16,7 +16,7 @@ let generations = 1;
         }    
 
         for (let i = 0; i < rows; i++) {
-            console.log("entered for loop!");
+            
             let tr = document.createElement("tr");
             for (let j = 0; j < columns; j++) {
                 let td = document.createElement("td");
@@ -59,7 +59,7 @@ let generations = 1;
                 aliveNeighbors++;
             }
         }
-            console.log(`cell (${i},${j}) has ${aliveNeighbors} alive neighbors`);
+            
     }
     return aliveNeighbors;
 }
@@ -69,7 +69,7 @@ let generations = 1;
  
 
     function nextGen(){
-        console.log("nextGen is running!")
+        
         const rows = document.getElementById("grid").rows.length;
         const cols = document.getElementById("grid").rows[0].cells.length;
 
