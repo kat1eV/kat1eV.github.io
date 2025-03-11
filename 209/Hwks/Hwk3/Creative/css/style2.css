@@ -5,12 +5,20 @@ h1{
     background-color:black;
 }
 
+h3{
+  text-align: center;
+  font-size: medium;
+  font-family: 'Times New Roman', Times, serif;
+  color:rgb(151, 2, 2);
+  background-color:black;
+}
+
 head{
     background-color:black;
 }
 
 body{
-    background-image:url('../../../Assets/stars.gif');
+    background-image:url('../../images/stars.gif');
     background-repeat: repeat;
     
 

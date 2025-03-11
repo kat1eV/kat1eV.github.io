@@ -126,6 +126,7 @@ function update(){
 
 //animate fish
 let intervalID;
+
 function startAnimation(){
     if(intervalID){
         clearInterval(intervalID);
