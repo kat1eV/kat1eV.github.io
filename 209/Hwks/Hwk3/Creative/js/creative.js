@@ -1,10 +1,10 @@
 function switchTheme () {
     var stylesheet = document.getElementById('stylesheet');
 
-    if(stylesheet.getAttribute('href')=='style2.css') {
-        stylesheet.setAttribute('href', 'style1.css');
+    if(stylesheet.getAttribute('href')=='./css/style2.css') {
+        stylesheet.setAttribute('href', './css/style1.css');
     } else {
-        stylesheet.setAttribute('href', 'style2.css');
+        stylesheet.setAttribute('href', './css/style2.css');
     }
 }
 
