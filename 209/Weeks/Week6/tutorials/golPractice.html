@@ -5,16 +5,19 @@
         <h1>Game of Life </h1>
 
     <div id="container">
-        <label>rows: <input type='number' id="rows" value="3"></label>
-        <label>columns: <input type='number' id="columns" value="3"></label>
-        <button onclick="genTable()">Generate Table</button>
+        <div id="container">
+            <label>rows: <input type='number' id="rows" placeholder="enter an integer"></label>
+            <label>columns: <input type='number' id="columns" placeholder="enter an integer"></label>
+            <button onclick="gen()">Generate Grid</button>
+
+        </div>
     </div>
 
     </head>
     <body>
         
 
-        <table class="table"></table>
+        <table id="grid"></table>
 
         <br><br>
 

@@ -1,0 +1,63 @@
+#myContainer {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: yellow;
+    }
+    #redSq {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    }
+
+    #blueSq {
+    width: 50px;
+    height: 50px;
+    top: 350px;
+    left: 350px;
+    position: absolute;
+    background-color: blue;
+    }
+
+#container2{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: radial-gradient(rgb(143, 210, 255),rgb(255, 255, 255), rgb(115, 0, 150));
+    }
+
+    #comet1 {
+    width: 50px;
+    height: 50px;
+    top: 350px;
+    left: 350px;
+    position: absolute;
+    background-color: rgb(164, 76, 123);
+    }
+    
+    #comet2{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: 350px;
+    background-color: rgb(23, 113, 159);
+    }  
+
+    #comet3{
+        width: 50px;
+        height: 50px;
+        top: 350px;
+        right: 350px;
+        position: absolute;
+        background-color: rgb(32, 75, 54);
+        } 
+
+    #comet4{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: rgb(85, 60, 121);
+      } 
+   

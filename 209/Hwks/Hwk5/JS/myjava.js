@@ -1,5 +1,13 @@
 //MY JAVASCRIPT
 
+
+//animate fish works only once and disks arent beeing drawn w/ vectors
+
+
+
+
+
+
 //initialize disk array
 function initializeDisks(){
     const numFish = document.getElementById("numFishInput").value;
@@ -17,7 +25,6 @@ function initializeDisks(){
         y: Math.floor((Math.random() * 1000) + 10),
         radius: Math.floor((Math.random() *70) + 20),
         color: anyColor(),
-        speed:Math.floor((Math.random() * 100) + 50),
         speedX: Math.floor((Math.random() * 100) + 50), // x-direction speed
         speedY: Math.floor((Math.random() * 100) + 50), // y-direction speed
         angle: Math.floor((Math.random() * 360) + 0) * Math.PI / 180 
@@ -80,9 +87,9 @@ function randomize(){
 
     ctx.beginPath();
     ctx.moveTo(x, y);  // start from the center of the disk
-    ctx.lineTo(endX, endY);  // end at the vector's tip
+    ctx.lineTo(endX*10, endY*10);  // end at the vector's tip
     ctx.strokeStyle = color;
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 2;
     ctx.stroke();
 }
 
@@ -97,22 +104,22 @@ function draw() {
 }
 
 //move fish
-function update(){
-    for(let i=0; i< disks.length; i++){
+function update() {
+    for(let disk of disks){
         console.log(`Updating disk at index ${i}:`, disks[i]); // log each disk for debugging
-        disks[i].x += disks[i].speedX * 0.1; 
-        disks[i].y += disks[i].speedY * 0.1;//used 0.1 to slow down the animation rate
+        disk.x += disk.speedX * 0.1; 
+        disk.y += disk.speedY * 0.1;//used 0.1 to slow down the animation rate
 
-        if (disks[i].x === undefined || disks[i].y === undefined || disks[i].speedX === undefined || disks[i].speedY === undefined) {
+        if (disk.x === undefined || disk.y === undefined || disk.speedX === undefined || disk.speedY === undefined) {
             console.error(`Error: Disk at index ${i} is missing required properties`);
             continue; // skip updating this disk if any required property is undefined
         }
 
-        if(disks[i].x <= 0 || disks[i].x >= canvas.width){
-            disks[i].speedX = -disks[i].speedX; //bounce when it hits wall
+        if(disk.x <= 0 || disk.x >= canvas.width){
+            disk.speedX = -disk.speedX; //bounce when it hits wall
         }
-        if(disks[i].y <= 0 || disks[i].y >= canvas.height){
-            disks[i].speedY = -disks[i].speedY; //bounce when it top or bottom wall
+        if(disk.y <= 0 || disk.y >= canvas.height){
+            disk.speedY = -disk.speedY; //bounce when it top or bottom wall
         }
     }
     if (NRSTEPS > 0){
@@ -128,6 +135,7 @@ function update(){
 let intervalID;
 
 function startAnimation(){
+    
     if(intervalID){
         clearInterval(intervalID);
     }
