@@ -1,5 +1,5 @@
 <?php
-    $imageFolder = realpath("../../../MidtermPart2/Level8/images");
+    $imageFolder = realpath("../Technical/images");
 
     if (!$imageFolder) {
         die("The images folder path is not correct.");
