@@ -1,13 +1,3 @@
-function switchTheme () {
-    var stylesheet = document.getElementById('stylesheet');
-
-    if(stylesheet.getAttribute('href')=='./css/dark-theme.css') {
-        stylesheet.setAttribute('href', './css/light-theme.css');
-    } else {
-        stylesheet.setAttribute('href', './css/dark-theme.css');
-    }
-}
-
         let slideIndex = 1;
         showSlides(slideIndex);
         

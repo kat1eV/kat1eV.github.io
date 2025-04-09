@@ -1,4 +1,26 @@
 <?php
+  $fullpath ="./images/";
+  $imagefolder = $fullpath;
+  echo "Resolved path: " . $imagefolder . "<br>";
+  if (is_dir($imagefolder)) {
+      echo "The directory exists!";
+  } else {
+      echo "The directory does not exist or is not accessible!";
+  }
+  $images = scan_dir($imagefolder."*");
+  $acceptedExt = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+  $imagefiles = array_filter($images, function($file) use ($acceptedExt) {
+      $extension = pathinfo($file, PATHINFO_EXTENSION);
+      return in_array(strtolower($extension), $acceptedExt) && is_file($file);
+  });
+  $imagefilesArray = array_values($imagefiles);
+  print_r($imagefilesArray);
+  $currentImage = isset($imagefilesArray[0]) ? $imagefilesArray[0] : null;
+  if ($currentImage) {
+      echo "Current Image: " . $currentImage . "<br>";
+  } else {
+      echo "No images found.<br>";
+  }
   if (isset($_GET['theme'])) {
     $_SESSION['theme'] = $_GET['theme'];
   }
@@ -56,7 +78,7 @@
 <html>
 <link id="stylesheet" rel="stylesheet" href="./css/<?php echo $stylesheet; ?>">
     <head>
-        <h1>・┆✦ʚ♡ɞ✦┆・Level 4  (Part 2)・┆✦ʚ♡ɞ✦┆・</h1>
+        <h1>・┆✦ʚ♡ɞ✦┆・Level 5  (Part 2)・┆✦ʚ♡ɞ✦┆・</h1>
         <!--Button to change CSS!-->
         <h2>༺♥༻❤₊˚♡ Switch theme ♡˚₊❤‧༺♥༻</h2>
         <a href="?theme=light-theme.css">Light</a> | <a href="?theme=dark-theme.css">Dark</a>
@@ -73,7 +95,7 @@
         <h2>✧༺♥༻✧Sorry I am not sure why im having such a hard time w/ PHP!✧༺♥༻✧</h2>
 
         <h2>╔═══════════════════════════☆♡☆═════════════════════════╗</h2>
-        <div class="slideshow-container">
+        <v class="slideshow-container">
         <?php
           $images = [
               "../images/0E6632B9-D1ED-4548-858B-9370732250FA.jpeg",
@@ -102,25 +124,11 @@
               $index++;
           }
         ?>
-          
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          </div>
-          <br>
-          
-          <!-- The dots/circles -->
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
-          <h2>╚══════════════════════════☆♡☆═════════════════════════╝</h2>
-    
-       
+      
 
-    <!--javascript link-->
-    <script src="./js/slideshow.js"></script>
+        <a href="?prev=true">&#10094; Previous</a>
+        <a href="?next=true">Next &#10095;</a>
+          <h2>╚══════════════════════════☆♡☆═════════════════════════╝</h2>
     </body>
 
 
