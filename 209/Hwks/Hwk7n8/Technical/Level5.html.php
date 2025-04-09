@@ -1,5 +1,5 @@
 <?php
-  $fullpath ="./images/";
+  $fullpath = realpath("./images/");
   $imagefolder = $fullpath;
   echo "Resolved path: " . $imagefolder . "<br>";
   if (is_dir($imagefolder)) {
@@ -7,14 +7,13 @@
   } else {
       echo "The directory does not exist or is not accessible!";
   }
-  $images = scan_dir($imagefolder."*");
+  $images = glob($imagefolder."*");
   $acceptedExt = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
   $imagefiles = array_filter($images, function($file) use ($acceptedExt) {
       $extension = pathinfo($file, PATHINFO_EXTENSION);
       return in_array(strtolower($extension), $acceptedExt) && is_file($file);
   });
   $imagefilesArray = array_values($imagefiles);
-  print_r($imagefilesArray);
   $currentImage = isset($imagefilesArray[0]) ? $imagefilesArray[0] : null;
   if ($currentImage) {
       echo "Current Image: " . $currentImage . "<br>";
@@ -71,8 +70,6 @@
     } else {
         echo "No images found.<br>";
     }
-
-
 ?>
 
 <html>
