@@ -92,7 +92,7 @@
 
    
 
-        <h3>・┆✦ʚ♡ɞ✦┆・・┆✦ʚ♡ɞ✦┆・</h3>
+        <h3>・┆✦ʚ♡ɞ✦┆・Total project time (6/7 levels):12hrs・┆✦ʚ♡ɞ✦┆・</h3>
 
 
     </head>
@@ -103,15 +103,18 @@
 
         <h2>╔═══════════════════════════☆♡☆═════════════════════════╗</h2>
         <v class="slideshow-container">
-        <figure>
-          <img src=<?php "./images/".$current_slide." "?> alt=<?php $current_slide ?> style="width: 200px; height: auto;">
-          <figcaption>Image # <?php print_r($current_slide)?></figcaption>
-        </figure>
-        </v>
-      
-
-        <a href="?prev=true">&#10094; Previous</a>
-        <a href="?next=true">Next &#10095;</a>
+        <?php
+    
+             $imageFolder = "../Technical/images/";
+             $scan_dir = scandir($imageFolder);
+     
+             foreach($scan_dir as $img):
+                     if(in_array($img,array('.','..')))
+                     continue;
+             ?>
+             <img src="<?php echo $imageFolder.$img ?>" alt="<?php echo $img ?>">
+             <?php endforeach; ?>
+   
           <h2>╚══════════════════════════☆♡☆═════════════════════════╝</h2>
     </body>
 

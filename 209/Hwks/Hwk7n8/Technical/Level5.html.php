@@ -94,33 +94,17 @@
         <h2>╔═══════════════════════════☆♡☆═════════════════════════╗</h2>
         <v class="slideshow-container">
         <?php
-          $images = [
-              "../images/0E6632B9-D1ED-4548-858B-9370732250FA.jpeg",
-              "../images/988C9E48-AC0F-4990-9B34-97BEA25093CA.jpeg",
-              "../images/IMG_0006.JPG",
-              "../images/IMG_0088.jpeg",
-              "../images/IMG_0302.jpeg",
-              "../images/IMG_0388.jpeg",
-              "../images/IMG_2309.jpeg",
-              "../images/IMG_4113.jpeg",
-              "../images/IMG_4642.jpeg",
-              "../images/IMG_6502.jpeg",
-              "../images/IMG_7235.JPG",
-              "../images/IMG_7354.jpeg",
-              "../images/IMG_8636.jpeg",
-              "../images/IMG_8897.jpeg"
-          ];
-
-          $index = 1;
-          foreach ($images as $image) {
-              echo "<div class='mySlides fade'>";
-              echo "<div class='numbertext'>$index / " . count($images) . "</div>";
-              echo "<img src='$image' style='width:100%'>";
-              echo "<div class='text'></div>";
-              echo "</div>";
-              $index++;
-          }
-        ?>
+    
+             $imageFolder = "../Technical/images/";
+             $scan_dir = scandir($imageFolder);
+     
+             foreach($scan_dir as $img):
+                     if(in_array($img,array('.','..')))
+                     continue;
+             ?>
+             <img src="<?php echo $imageFolder.$img ?>" alt="<?php echo $img ?>">
+             <?php endforeach; ?>
+   
       
 
         <a href="?prev=true">&#10094; Previous</a>

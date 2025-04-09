@@ -60,7 +60,18 @@
     <p>Image Path: <?php echo $imagefolder . '/' . $currentImage; ?></p> 
 
    <div class="slideshow-container">
-        <img src="<?php echo $imagefolder . '/' . $currentImage; ?>" alt="Slide Image">
+   <?php
+    
+    $imageFolder = "../Technical/images/";
+    $scan_dir = scandir($imageFolder);
+
+    foreach($scan_dir as $img):
+            if(in_array($img,array('.','..')))
+            continue;
+    ?>
+    <img src="<?php echo $imageFolder.$img ?>" alt="<?php echo $img ?>">
+    <?php endforeach; ?>
+
     </div>
 
     <div class="nav">

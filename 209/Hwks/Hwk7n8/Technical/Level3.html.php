@@ -83,11 +83,18 @@
     <h2>Switch Theme:</h2>
     <a href="?theme=light-theme.css">Light</a> | <a href="?theme=dark-theme.css">Dark</a>
 
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="../images/<?php echo $current_slide; ?>" style="width:100%">
-        </div>
-    </div>
+    <?php
+    
+             $imageFolder = "../Technical/images/";
+             $scan_dir = scandir($imageFolder);
+     
+             foreach($scan_dir as $img):
+                     if(in_array($img,array('.','..')))
+                     continue;
+             ?>
+             <img src="<?php echo $imageFolder.$img ?>" alt="<?php echo $img ?>">
+             <?php endforeach; ?>
+   
 
     <a href="?prev=true">&#10094; Previous</a>
     <a href="?next=true">Next &#10095;</a>
