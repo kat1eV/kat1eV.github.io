@@ -1,26 +1,28 @@
 <?php
-    $imageFolder = realpath("../Technical/images");
-
-    if (!$imageFolder) {
-        die("The images folder path is not correct.");
-    }
+    $fullpath = realpath("./images");
     
-   
-   $images= scandir($imageFolder);
-
-   $imageFiles = array_filter($images, function($file) use ($imageFolder){
+    
+    $imagefolder = $fullpath;
+    echo "Resolved path: " . $imagefolder . "<br>";
+    if (is_dir($imagefolder)) {
+        echo "The directory exists!";
+    } else {
+        echo "The directory does not exist or is not accessible!";
+    }
+    $images = glob($imagefolder . '/*');
+    $imagefiles = array_filter($images, function($file) use ($imagefolder) {
         $acceptedExt = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
         $extension = pathinfo($file, PATHINFO_EXTENSION);
-
-        
-
-        return in_array(strtolower($extension), $acceptedExt) && is_file($imageFolder . '/' . $file);
+        return in_array(strtolower($extension), $acceptedExt) && is_file($imagefolder . '/' . $file);
+        $imagefilesArray = array_values($imagefiles);
+        $currentImage = isset($imagefilesArray[0]) ? $imagefilesArray[0] : null;
+        if ($currentImage) {
+            echo "Current Image: " . $currentImage . "\n";
+        }
     });
-    $imageFilesArray =array_values($imageFiles);
+    $currentImage = isset($imagefilesArray[0]) ? $imagefilesArray[0] : null;
+    
 
-    $currentSlide = isset($_GET['slide']) ? (int)$_GET['slide'] : 0;
-    $currentSlide = max(0, min($currentSlide, count($imageFilesArray) - 1)); 
-    $currentImage = $imageFilesArray[$currentSlide];
     ?>
 <html>
 <head>
@@ -53,17 +55,19 @@
 </head>
 <body>
     <h1>Level 2</h1>
+    <p><b>I dont know why the images wont come up!!!!! </b></p>
 
-    <p>Image Path: <?php echo $imageFolder . '/' . $currentImage; ?></p>
+    <p>Image Path: <?php echo $imagefolder . '/' . $currentImage; ?></p> 
 
-    <div class="slideshow-constainer">
-        <img src="<?php echo $imageFolder . '/' . $currentImage; ?>" alt="Slide Image">
+   <div class="slideshow-container">
+        <img src="<?php echo $imagefolder . '/' . $currentImage; ?>" alt="Slide Image">
     </div>
 
     <div class="nav">
-    <a href="?slide=<?php echo $currentSlide - 1 < 0 ? count($imageFilesArray) - 1 : $currentSlide - 1; ?>">previous</a>
-    <a href="?slide=<?php echo $currentSlide + 1 >= count($imageFilesArray) ? 0 : $currentSlide + 1; ?>">next</a>
+    <a href="?slide=<?php echo $currentSlide - 1 < 0 ? count($imagefilesArray) - 1 : $currentSlide - 1; ?>">previous</a>
+    <a href="?slide=<?php echo $currentSlide + 1 >= count($imagefilesArray) ? 0 : $currentSlide + 1; ?>">next</a>
     </div>
+    
         
    
 </body>

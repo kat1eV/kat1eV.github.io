@@ -1,0 +1,30 @@
+.slideshow-container {
+    text-align: center;
+    margin-top: 50px;
+}
+.slideshow-container img {
+    max-width: 80%;
+    height: auto;
+    border: 2px solid #ccc;
+}
+.navigation {
+    margin-top: 20px;
+}
+.navigation a {
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+.navigation a:hover {
+    background-color: #e6b5b5;
+}
+body{
+    background-color: black;
+}
+p,h1,h2,h3{
+    color: #ccc;
+}
